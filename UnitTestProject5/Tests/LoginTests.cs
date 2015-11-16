@@ -2,13 +2,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using UnitTestProject5.Pages;
 
-namespace UnitTestProject5
+namespace Git.Tests
 {
     [TestClass]
-    public class FacebookLoginTests
+    public class GitLoginTests
     {
         IWebDriver driver;
+
+        Login loginPage;
 
         [TestInitialize]
         public void TestInitialize()
@@ -16,6 +19,8 @@ namespace UnitTestProject5
             driver = new FirefoxDriver();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             driver.Url = "https://github.com/session";
+
+            loginPage = new Login(driver);
         }
 
         [TestCleanup]
@@ -31,16 +36,13 @@ namespace UnitTestProject5
             // init
 
             // act
-            var emailTextBox = driver.FindElement(By.Id("login_field"));
-            var passwordTextBox = driver.FindElement(By.Id("password"));
+            loginPage.LoginField = "notvalid@gmail.com";
+            loginPage.PasswordField = "lalala";
 
-            emailTextBox.SendKeys("notValid@gmail.com");
-            passwordTextBox.SendKeys("lalala");
-
-            passwordTextBox.SendKeys(Keys.Return);
-
+            loginPage.Submit();
+            
             // assert
-            Assert.IsTrue(Helpers.IsElementPresent(driver, By.ClassName("flash-error")));
+            Assert.IsTrue(loginPage.ErrorMessageExists());
         }
 
         [TestMethod]
@@ -53,7 +55,7 @@ namespace UnitTestProject5
             signUp.Click();
 
             // assert
-            Assert.IsTrue(Helpers.IsElementPresent(driver, By.ClassName("signup")));
+            Assert.IsTrue(Helpers.IsElementPresent(driver, By.CssSelector("body.signup")));
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace UnitTestProject5
+namespace Git.Tests
 {
     static class Helpers
     {
