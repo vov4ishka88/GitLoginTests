@@ -51,11 +51,13 @@ namespace Git.Tests
             // init
 
             // act
-            IWebElement signUp = driver.FindElement(By.CssSelector("a[href=\"/join\"]"));
-            signUp.Click();
+            // IWebElement signUp = driver.FindElement(By.CssSelector("a[href=\"/join\"]"));
+						loginPage.ClickOnSignUpButton();
+            //signUp.Click();
 
             // assert
-            Assert.IsTrue(Helpers.IsElementPresent(driver, By.CssSelector("body.signup")));
+            //Assert.IsTrue(Helpers.IsElementPresent(driver, By.CssSelector("body.signup")));
+						Assert.IsTrue(loginPage.SignUpPageExists());
         }
     }
 }

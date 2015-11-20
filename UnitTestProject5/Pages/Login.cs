@@ -1,6 +1,7 @@
 ﻿using Git.Tests;
 using OpenQA.Selenium;
 
+
 namespace UnitTestProject5.Pages
 {
     class Login
@@ -9,6 +10,10 @@ namespace UnitTestProject5.Pages
         private By LoginFieldSelector { get { return By.Id("login_field"); } }
         private By PasswordFieldSelector { get { return By.Id("password"); } }
         private By ErrorMessagSelector { get { return By.ClassName("flash-error"); } }
+			  private By SignUpButtonSelector { get { return By.CssSelector("a[href=\"/join\"]"); } }
+				private By SignUpPageSelector { get { return By.CssSelector("body.signup"); } }
+
+				// private By SignUpButtonSelector { get { return By.CssSelector("a[href=\"/join\"]"); } }
 
         public string LoginField
         {
@@ -26,6 +31,16 @@ namespace UnitTestProject5.Pages
             return Helpers.IsElementPresent(driver, ErrorMessagSelector);
         }
 
+				public bool SignUpPageExists()
+				{ 
+						return Helpers.IsElementPresent(driver, SignUpPageSelector);
+				}
+
+				//public string ClickOnSignUpButton
+			//	{
+			//			get { driver.FindElement(SignUpButtonSelector).SendKeys(Keys.Return);}
+			//	}
+
         public Login(IWebDriver driver)
         {
             this.driver = driver;
@@ -35,5 +50,11 @@ namespace UnitTestProject5.Pages
         {
             driver.FindElement(PasswordFieldSelector).SendKeys(Keys.Return);
         }
+
+				public void ClickOnSignUpButton() 
+				{
+					driver.FindElement(SignUpButtonSelector).SendKeys(Keys.Return);
+				}
+								
     }
 }

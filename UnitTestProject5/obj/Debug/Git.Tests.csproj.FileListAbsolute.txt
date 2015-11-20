@@ -6,3 +6,9 @@ C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestPr
 C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\obj\Debug\Git.Tests.csprojResolveAssemblyReference.cache
 C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\obj\Debug\UnitTestProject5.dll
 C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\obj\Debug\UnitTestProject5.pdb
+D:\TestingProject\GitLoginTests\UnitTestProject5\bin\Debug\UnitTestProject5.dll
+D:\TestingProject\GitLoginTests\UnitTestProject5\bin\Debug\UnitTestProject5.pdb
+D:\TestingProject\GitLoginTests\UnitTestProject5\bin\Debug\WebDriver.xml
+D:\TestingProject\GitLoginTests\UnitTestProject5\obj\Debug\Git.Tests.csprojResolveAssemblyReference.cache
+D:\TestingProject\GitLoginTests\UnitTestProject5\obj\Debug\UnitTestProject5.dll
+D:\TestingProject\GitLoginTests\UnitTestProject5\obj\Debug\UnitTestProject5.pdb
