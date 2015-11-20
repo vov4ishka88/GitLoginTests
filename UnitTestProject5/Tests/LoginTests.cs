@@ -6,58 +6,44 @@ using UnitTestProject5.Pages;
 
 namespace Git.Tests
 {
-    [TestClass]
-    public class GitLoginTests
-    {
-        IWebDriver driver;
+	[TestClass]
+	public class GitLoginTests
+	{
+		IWebDriver driver;
 
-        Login loginPage;
+		Login loginPage;
 
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            driver = new FirefoxDriver();
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-            driver.Url = "https://github.com/session";
+		[TestInitialize]
+		public void TestInitialize()
+		{
+			driver = new FirefoxDriver();
+			driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+			driver.Url = "https://github.com/session";
 
-            loginPage = new Login(driver);
-        }
+			loginPage = new Login(driver);
+		}
 
-        [TestCleanup]
-        public void TestCleanUp()
-        {
-            driver.Quit();
-            driver.Dispose();
-        }
+		[TestCleanup]
+		public void TestCleanUp()
+		{
+			driver.Quit();
+			driver.Dispose();
+		}
 
-        [TestMethod]
-        public void InvalidCredentialsLeadToErrorPage()
-        {
-            // init
+		[TestMethod]
+		public void InvalidCredentialsLeadToErrorPage()
+		{
+			loginPage.LoginField = "notvalid@gmail.com";
+			loginPage.PasswordField = "lalala";
+			loginPage.Submit();
+			Assert.IsTrue(loginPage.ErrorMessageExists());
+		}
 
-            // act
-            loginPage.LoginField = "notvalid@gmail.com";
-            loginPage.PasswordField = "lalala";
-
-            loginPage.Submit();
-            
-            // assert
-            Assert.IsTrue(loginPage.ErrorMessageExists());
-        }
-
-        [TestMethod]
-        public void ClickingSignUpLeadsToSignUpPage()
-        {
-            // init
-
-            // act
-            // IWebElement signUp = driver.FindElement(By.CssSelector("a[href=\"/join\"]"));
-						loginPage.ClickOnSignUpButton();
-            //signUp.Click();
-
-            // assert
-            //Assert.IsTrue(Helpers.IsElementPresent(driver, By.CssSelector("body.signup")));
-						Assert.IsTrue(loginPage.SignUpPageExists());
-        }
-    }
+		[TestMethod]
+		public void ClickingSignUpLeadsToSignUpPage()
+		{
+			loginPage.ClickOnSignUpButton();
+			Assert.IsTrue(loginPage.SignUpPageExists());
+		}
+	}
 }
