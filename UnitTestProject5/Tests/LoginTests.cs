@@ -20,7 +20,6 @@ namespace Git.Tests
 			driver = new FirefoxDriver();
 			driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 			driver.Url = "https://github.com/session";
-
 			loginPage = new Login(driver);
 		}
 
