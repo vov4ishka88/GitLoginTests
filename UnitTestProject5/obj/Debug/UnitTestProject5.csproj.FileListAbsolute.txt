@@ -1,8 +1,0 @@
-C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\bin\Debug\UnitTestProject5.dll
-C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\bin\Debug\UnitTestProject5.pdb
-C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\bin\Debug\WebDriver.dll
-C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\bin\Debug\WebDriver.xml
-C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\obj\Debug\UnitTestProject5.csprojResolveAssemblyReference.cache
-C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\obj\Debug\UnitTestProject5.dll
-C:\Users\vov4i\Documents\Visual Studio 2015\Projects\UnitTestProject5\UnitTestProject5\obj\Debug\UnitTestProject5.pdb
