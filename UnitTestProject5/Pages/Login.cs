@@ -12,6 +12,7 @@ namespace UnitTestProject5.Pages
 		private By ErrorMessagSelector { get { return By.ClassName("flash-error"); } }
 		private By SignUpButtonSelector { get { return By.CssSelector("a[href=\"/join\"]"); } }
 		private By SignUpPageSelector { get { return By.CssSelector("body.signup"); } }
+		private By WelcomePageSelector { get { return By.ClassName("avatar"); } }
 
 		public string LoginField
 		{
@@ -33,6 +34,13 @@ namespace UnitTestProject5.Pages
 		{
 			return Helpers.IsElementPresent(driver, SignUpPageSelector);
 		}
+
+		public bool LoginToUserPage()
+		{
+			return Helpers.IsElementPresent(driver, WelcomePageSelector);
+		}
+
+
 
 		public Login(IWebDriver driver)
 		{

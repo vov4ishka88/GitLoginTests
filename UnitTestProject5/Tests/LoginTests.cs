@@ -52,5 +52,17 @@ namespace Git.Tests
 			//assert
 			Assert.IsTrue(loginPage.SignUpPageExists());
 		}
+
+		[TestMethod]
+		public void ValidCredentialsLeadPersonalPage()
+		{
+			//act
+			loginPage.LoginField = "vov4ishka1988@gmail.com";
+			loginPage.PasswordField = "!Vovan1988";
+			loginPage.Submit();
+
+			//assert
+			Assert.IsTrue(loginPage.LoginToUserPage());
+		}
 	}
 }
