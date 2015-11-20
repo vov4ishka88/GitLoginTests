@@ -58,7 +58,7 @@ namespace Git.Tests
 		{
 			//act
 			loginPage.LoginField = "vov4ishka1988@gmail.com";
-			loginPage.PasswordField = "!Vovan1988";
+			loginPage.PasswordField = "missed";
 			loginPage.Submit();
 
 			//assert
