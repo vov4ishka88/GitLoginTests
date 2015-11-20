@@ -46,7 +46,7 @@ namespace UnitTestProject5.Pages
 
 		public void ClickOnSignUpButton()
 		{
-			driver.FindElement(SignUpButtonSelector).SendKeys(Keys.Return);
+			driver.FindElement(SignUpButtonSelector).Click();
 		}
 
 	}

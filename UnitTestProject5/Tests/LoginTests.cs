@@ -16,6 +16,7 @@ namespace Git.Tests
 		[TestInitialize]
 		public void TestInitialize()
 		{
+			//init
 			driver = new FirefoxDriver();
 			driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 			driver.Url = "https://github.com/session";
@@ -25,7 +26,8 @@ namespace Git.Tests
 
 		[TestCleanup]
 		public void TestCleanUp()
-		{
+		{	
+			//clearing up
 			driver.Quit();
 			driver.Dispose();
 		}
@@ -33,16 +35,22 @@ namespace Git.Tests
 		[TestMethod]
 		public void InvalidCredentialsLeadToErrorPage()
 		{
+			//act
 			loginPage.LoginField = "notvalid@gmail.com";
 			loginPage.PasswordField = "lalala";
 			loginPage.Submit();
+			
+			//assert
 			Assert.IsTrue(loginPage.ErrorMessageExists());
 		}
 
 		[TestMethod]
 		public void ClickingSignUpLeadsToSignUpPage()
 		{
+			//act
 			loginPage.ClickOnSignUpButton();
+			
+			//assert
 			Assert.IsTrue(loginPage.SignUpPageExists());
 		}
 	}
